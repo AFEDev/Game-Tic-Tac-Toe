@@ -1,51 +1,6 @@
-const cell11 = document.querySelector(".cell11");
+import isSolved from "./isSolved.js";
 
-function isSolved(board) {
-  let merged = [].concat(board).join(",").split(",");
-  let column1 = [];
-  let column2 = [];
-  let column3 = [];
-  let diagonal1 = [];
-  let diagonal2 = [];
-
-  let i = 0;
-  for (let line of board) {
-    column1.push(line[0]);
-    column2.push(line[1]);
-    column3.push(line[2]);
-    diagonal1.push(line[0 + i]);
-    diagonal2.push(line[2 - i]);
-    i++;
-  }
-
-  let columns = [].concat(
-    [column1],
-    [column2],
-    [column3],
-    [diagonal1],
-    [diagonal2],
-    board
-  );
-
-  for (let column of columns) {
-    if (column.reduce((a, b) => a + b, 0) === 6) {
-      return 2;
-    } else if (
-      column.reduce((a, b) => a + b, 0) === 3 &&
-      column.indexOf(0) == -1
-    ) {
-      return 1;
-    }
-  }
-
-  if (merged.includes("0")) {
-    return -1;
-  } else {
-    return 0;
-  }
-}
-
-let mainArray = [
+const mainArray = [
   [0, 0, 0],
   [0, 0, 0],
   [0, 0, 0],
@@ -71,7 +26,7 @@ const buttons = (cells1, lineNumber) => {
           cells1[i].appendChild(textOver);
           mainArray[lineNumber][i] = 2;
           if (isSolved(mainArray) == 2) {
-            return console.log("laimejo 0");
+            return console.log("O win");
           }
         } else {
           let textOver = document.createTextNode("X");
@@ -79,11 +34,11 @@ const buttons = (cells1, lineNumber) => {
           mainArray[lineNumber][i] = 1;
 
           if (isSolved(mainArray) == 1) {
-            return console.log("laimejo X");
+            return console.log("X win");
           }
         }
       } else {
-        console.log("Lygiosios");
+        console.log("It's cats game");
       }
     });
   }
