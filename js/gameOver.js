@@ -7,9 +7,6 @@ const gameOver = (result) => {
   div.appendChild(h2);
   div.appendChild(button);
   button.innerText = "OK";
-  button.addEventListener("click", () => {
-    div.remove();
-  });
   div.classList.add("notification");
   if (result == 1) {
     h2.innerText = "X win";
@@ -18,6 +15,21 @@ const gameOver = (result) => {
   } else if (result == 0) {
     h2.innerText = "It's cats game";
   }
+
+  button.addEventListener("click", () => {
+    console.log("click");
+    div.remove();
+    const cell = document.querySelectorAll(".cell");
+    for (let text of cell) {
+      text.innerHTML = "";
+    }
+  });
+
+  return [
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+  ];
 };
 
 export default gameOver;
