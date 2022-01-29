@@ -94,12 +94,12 @@ body {
   align-items: flex-start;
   position: relative;
   width: 50%;
-  font-size: 25vw;
+  font-size: 10vw;
 }
 
 @media all and (max-width: 700px) {
   .container {
-    width: 100%;
+    width: 90%;
     /* font-size: 2.5rem; */
   }
 }
@@ -119,6 +119,7 @@ body {
 @media all and (min-width: 2000px) {
   .container {
     width: 30%;
+    font-size: 9vw;
   }
 }
 

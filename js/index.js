@@ -6,7 +6,7 @@ const mainArray = [
   [0, 0, 0],
 ];
 
-const cells1 = document.querySelectorAll(".row-1 .cell");
+const cells0 = document.querySelectorAll(".row-1 .cell");
 const cells2 = document.querySelectorAll(".row-2 .cell");
 const cells3 = document.querySelectorAll(".row-3 .cell");
 
@@ -44,17 +44,9 @@ const buttons = (cells1, lineNumber) => {
   }
 };
 
-buttons(cells1, 0);
+buttons(cells0, 0);
 buttons(cells2, 1);
 buttons(cells3, 2);
-
-// if (isSolved(mainArray) == 1) {
-//   console.log("laimejo 1")
-// } else if (isSolved(mainArray) == 2) {
-//   console.log("laimejo 2")
-// } else {
-//   console.log("tesiam")
-// }
 
 console.log(isSolved(mainArray));
 
