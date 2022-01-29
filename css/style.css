@@ -78,6 +78,8 @@ h6 {
 body {
   max-height: 100%;
   margin: 0;
+  position: relative;
+  font-family: "Indie Flower", cursive;
 }
 .wrapper {
   padding-top: 20px;
@@ -106,13 +108,13 @@ body {
 
 @media all and (min-width: 700px) {
   .container {
-    width: 100%;
+    width: 70%;
   }
 }
 
-@media all and (min-width: 1200px) {
+@media all and (min-width: 830px) {
   .container {
-    width: 50%;
+    width: 40%;
   }
 }
 
@@ -162,5 +164,58 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Indie Flower", cursive;
+}
+
+.notification {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  width: 50%;
+  background-color: rgb(255, 255, 255);
+  font-size: 30px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  z-index: 9999;
+  text-align: center;
+  padding: 1%;
+}
+
+button {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.25rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+button:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }
