@@ -1,7 +1,7 @@
 import isSolved from "./isSolved.js";
 import gameOver from "./gameOver.js";
 
-const mainArray = [
+let mainArray = [
   [0, 0, 0],
   [0, 0, 0],
   [0, 0, 0],
@@ -15,6 +15,7 @@ const buttons = (cells1, lineNumber) => {
   for (let i = 0; i < cells1.length; i++) {
     cells1[i].addEventListener("click", () => {
       console.log(isSolved(mainArray));
+      console.log(mainArray);
 
       if (cells1[i].innerHTML == "") {
         let merged = [].concat(mainArray).join(",").split(",");
@@ -26,20 +27,23 @@ const buttons = (cells1, lineNumber) => {
           let textOver = document.createTextNode("O");
           cells1[i].appendChild(textOver);
           mainArray[lineNumber][i] = 2;
-          if (isSolved(mainArray) == 2) {
-            return gameOver(2);
+          if (isSolved(mainArray) === 2) {
+            return (mainArray = gameOver(2));
           }
         } else if (
-          merged.filter((item) => item == "1").length ==
-          merged.filter((item) => item == "2").length
+          merged.filter((item) => item === "1").length ==
+          merged.filter((item) => item === "2").length
         ) {
           let textOver = document.createTextNode("X");
           cells1[i].appendChild(textOver);
           mainArray[lineNumber][i] = 1;
 
-          if (isSolved(mainArray) == 1) {
-            return gameOver(1);
-          } else if (isSolved(mainArray) == 0) return gameOver(0);
+          if (isSolved(mainArray) === 1) {
+            return (mainArray = gameOver(1));
+          } else if (isSolved(mainArray) === 0) {
+            mainArray = mainArray = gameOver(0);
+            return (mainArray = gameOver(0));
+          }
         }
       }
     });
