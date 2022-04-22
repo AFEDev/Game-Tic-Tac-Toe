@@ -3,6 +3,7 @@ const gameOver = (result) => {
   const div = document.createElement("div");
   const h2 = document.createElement("h2");
   const button = document.createElement("button");
+  document.getElementById("modal").style.display="block";
   body.appendChild(div);
   div.appendChild(h2);
   div.appendChild(button);
@@ -19,6 +20,7 @@ const gameOver = (result) => {
   button.addEventListener("click", () => {
     console.log("click");
     div.remove();
+    document.getElementById("modal").style.display="none";
     const cell = document.querySelectorAll(".cell");
     for (let text of cell) {
       text.innerHTML = "";

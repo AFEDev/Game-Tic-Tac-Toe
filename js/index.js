@@ -41,7 +41,7 @@ const buttons = (cells1, lineNumber) => {
           if (isSolved(mainArray) === 1) {
             return (mainArray = gameOver(1));
           } else if (isSolved(mainArray) === 0) {
-            mainArray = mainArray = gameOver(0);
+           // mainArray = mainArray = gameOver(0);
             return (mainArray = gameOver(0));
           }
         }
